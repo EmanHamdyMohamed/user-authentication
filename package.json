@@ -1,0 +1,42 @@
+{
+    "name": "user-authentication",
+    "version": "1",
+    "engines": {
+        "node": ">= 12.0.0"
+    },
+    "resolve": {
+        "modules": []
+    },
+    "scripts": {
+        "clean": "mkdir -p build && rm -rf build/..?* build/.[!.]* build/*",
+        "start:dev": "babel-node src",
+        "start": "node --max_old_space_size=8192 ./build/index.js",
+        "watch:docker": "nodemon --ignore 'build/*' --inspect=0.0.0.0:7500 --exec babel-node src",
+        "test": "jest --coverage --watchAll"
+    },
+    "dependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.5",
+        "@babel/node": "^7.16.5",
+        "@babel/register": "^7.16.5",
+        "babel-plugin-module-resolver": "^4.1.0",
+        "bluebird": "3.7.2",
+        "body-parser": "^1.19.1",
+        "cors": "2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.17.2",
+        "jsonwebtoken": "^8.5.1",
+        "lodash": "^4.17.20",
+        "mongoose": "^6.1.2",
+        "password-hash": "1.2.2",
+        "swagger-jsdoc": "^6.2.1",
+        "swagger-ui-express": "^4.4.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.16.5",
+        "babel-jest": "^27.4.5",
+        "babel-loader": "^8.2.3",
+        "jest": "^27.5.1",
+        "nodemon": "^2.0.15"
+    }
+}
